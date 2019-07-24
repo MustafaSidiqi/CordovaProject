@@ -29,12 +29,31 @@ var deviceInfo = function() {
 };
 
 var getLocation = function() {
-    var suc = function(p) {
-        alert(p.coords.latitude + " " + p.coords.longitude);
-    };
-    var locFail = function() {
-    };
-    navigator.geolocation.getCurrentPosition(suc, locFail);
+    /*
+    // Calle function for getJSONLast
+
+    var obj = new Array();
+    obj = serial.getJSONLast();
+
+    for(var i = 0; i < obj.length; i++) {
+        alert("name: " + obj[i].name);
+        alert("value: " + obj[i].value);
+    }
+    */
+
+    // Calle function for getJSON
+
+    var obj1 = new Array();
+    obj1 = serial.getJSON();
+
+    for (var i = 0; i < obj1.length; i++) {
+        alert(obj1[i]);
+        var obj2 = obj1[i];
+        for (var j = 0; j < obj2.length; j++) {
+            alert(obj2[j].name + " " + obj2[j].value);
+        }
+    }
+
 };
 
 var beep = function() {
@@ -87,7 +106,7 @@ function close() {
 }
 
 function check_network() {
-    serial.getSpeed();
+    serial.requestData();
 }
 
 function init() {
