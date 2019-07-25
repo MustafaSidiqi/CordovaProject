@@ -29,9 +29,9 @@ var deviceInfo = function() {
 };
 
 var getLocation = function() {
-    /*
-    // Calle function for getJSONLast
 
+    // Calle function for getJSONLast
+    /*
     var obj = new Array();
     obj = serial.getJSONLast();
 
@@ -53,7 +53,6 @@ var getLocation = function() {
             alert(obj2[j].name + " " + obj2[j].value);
         }
     }
-
 };
 
 var beep = function() {
